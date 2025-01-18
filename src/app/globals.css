@@ -19,3 +19,41 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Tailwind CSS Custom Animations */
+@keyframes moveLines {
+  0% {
+    stroke-dasharray: 0 200;
+  }
+  100% {
+    stroke-dasharray: 200 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Custom Style for the Neural Network / AI Effect */
+.ai-background {
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.9) 30%, rgba(0, 0, 0, 0.8) 70%);
+  animation: pulse 5s infinite ease-in-out;
+}
+
+.ai-line {
+  stroke: #00f9ff;
+  stroke-width: 1;
+  animation: moveLines 5s linear infinite;
+}
+
+.ai-node {
+  fill: #00f9ff;
+  animation: pulse 3s ease-in-out infinite;
+}
