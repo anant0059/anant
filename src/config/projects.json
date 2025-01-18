@@ -1,0 +1,21 @@
+[
+    {
+      "title": "Bank",
+      "description": "Developed an end-to-end backend solution for a banking application using Golang, Gin, Docker, Kubernetes, and AWS, incorporating JWT authentication and RESTful APIs for secure transactions and scalability.",
+      "tech": ["Golang", "RESTful API", "Gin", "Kubernetes", "AWS", "PostgreSQL", "Github Actions"],
+      "link": "https://github.com/anant0059/Bank"
+    },
+    {
+      "title": "Indian Sign Language Detection, IIT Jammu",
+      "description": "Created an advanced Indian Sign Language Detection system with TensorFlow and Keras to identify gestures, integrated into a Flask web application, facilitating communication for the hearing-impaired.",
+      "tech": ["Python", "Flask", "OpenCV", "JavaScript"],
+      "link": "https://github.com/anant0059/Indian-Sign-Language-Recogination.git"
+    },
+    {
+      "title": "Book Store",
+      "description": "Built a fully functional Book Store web application with React.js, Node.js, Express.js, and MongoDB, offering seamless inventory management, user authentication, and a robust REST API.",
+      "tech": ["React.js", "Node.js", "Express.js", "MongoDB"],
+      "link": "https://github.com/anant0059"
+    }
+]
+  
