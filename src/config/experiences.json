@@ -1,0 +1,34 @@
+[
+    {
+      "role": "Full Stack Developer",
+      "company": "Saarthi.ai, Bangalore",
+      "date": "Aug 2023 - Present",
+      "points": [
+        "Created a microservice to establish a robust data pipeline between client databases and our system, automating the extraction, transformation, and loading (ETL) process for seamless integration.",
+        "Solely manage, deploy, and troubleshoot all services of Saarthi.ai for Bank of Maharashtra within the bank’s infrastructure, automating tasks, diagnosing issues, and communicating resolutions to ensure smooth operations.",
+        "Automated the initiation of call campaigns based on the integrated data, improving efficiency and ensuring real-time synchronization for two clients.",
+        "Maintained and deployed scalable microservices architecture with Kubernetes, automating tasks using cron jobs.",
+        "Implemented new features for WhatsApp and SMS services using Kaleyra API and Engineered WhatsApp/Voice bots.",
+        "Collaborated with cross-functional teams to develop and deploy multilingual AI BOTs, reducing the lifecycle of new BOT products."
+      ],
+      "tech": [
+        "Node.js", "Express", "Python", "JavaScript", "Kubernetes", "MongoDB", "Docker", "FastAPI", "Redis", "Git", "RASA", "LLM", "Prompt Engineering", "Langchain"
+      ],
+      "icon": "FaBriefcase"
+    },
+    {
+      "role": "Software Developer Intern",
+      "company": "ByteLearn Edtech, Noida",
+      "date": "May 2022 - Oct 2022",
+      "points": [
+        "Enhanced the functionality of the AI-based Math solver platform, enabling efficient resolution of 10+ Math chapters by collaborating with the solver team.",
+        "Crafted several UI components, including four math modules actively utilized by thousands of students.",
+        "Resolved 100+ critical bugs of several problems, ensuring seamless user experience and preparing the product for release."
+      ],
+      "tech": [
+        "Python", "JavaScript", "React.js", "Jinja String", "Git"
+      ],
+      "icon": "FaLaptopCode"
+    }
+  ]
+  

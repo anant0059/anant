@@ -1,5 +1,5 @@
 import Header from './components/Header'
-import Link from 'next/link'
+// import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -16,11 +16,11 @@ export default function Home() {
           Outside the tech world, I&apos;m on a journey of self-discovery, gaining new perspectives through experiences and creative expression.
         </p>
         
-        <div className="mt-12">
+        {/* <div className="mt-12">
           <h3 className="text-2xl text-gray-400 mb-4">
             Here&apos;s my most recent posts or <Link href="/blog" className="underline hover:text-gray-300">read a random one!</Link>
           </h3>
-        </div>
+        </div> */}
       </div>
     </main>
   )
