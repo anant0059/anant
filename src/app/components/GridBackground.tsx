@@ -1,34 +1,52 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 
+type Dot = {
+  cx: string;
+  cy: string;
+  r: string;
+};
+
+type Line = {
+  x1: string;
+  y1: string;
+  x2: string;
+  y2: string;
+};
+
+type DynamicPoint = {
+  cx: number;
+  cy: number;
+  r: number;
+  opacity: number;
+};
+
 export default function GridBackground() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [dots, setDots] = useState<any[]>([]);
-  const [tinyDots, setTinyDots] = useState<any[]>([]);
-  const [dynamicPoints, setDynamicPoints] = useState<any[]>([]);
-  const staticLines = useRef<any[]>([]); // Ref to hold static lines
+  const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const [dots, setDots] = useState<Dot[]>([]);
+  const [tinyDots, setTinyDots] = useState<Dot[]>([]);
+  const [dynamicPoints, setDynamicPoints] = useState<DynamicPoint[]>([]);
+  const staticLines = useRef<Line[]>([]); // Ref to hold static lines
 
   useEffect(() => {
-    // Generate a fixed number of medium-sized dots and tiny dots.
     const numberOfDots = 10; // Medium dots
     const numberOfTinyDots = 50; // Tiny dots
 
-    const generatedDots = Array.from({ length: numberOfDots }).map(() => ({
+    const generatedDots: Dot[] = Array.from({ length: numberOfDots }).map(() => ({
       cx: `${Math.random() * 100}%`,
       cy: `${Math.random() * 100}%`,
-      r: '3px', // Medium dots
+      r: '3px',
     }));
 
-    const generatedTinyDots = Array.from({ length: numberOfTinyDots }).map(() => ({
+    const generatedTinyDots: Dot[] = Array.from({ length: numberOfTinyDots }).map(() => ({
       cx: `${Math.random() * 100}%`,
       cy: `${Math.random() * 100}%`,
-      r: '1px', // Tiny dots
+      r: '1px',
     }));
 
     setDots(generatedDots);
     setTinyDots(generatedTinyDots);
 
-    // Generate static lines once
     if (staticLines.current.length === 0) {
       staticLines.current = Array.from({ length: 5 }).map(() => ({
         x1: `${Math.random() * 100}%`,
@@ -41,16 +59,14 @@ export default function GridBackground() {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
 
-      // Add dynamic points near the mouse pointer
       setDynamicPoints((prevPoints) => {
-        const newPoint = {
+        const newPoint: DynamicPoint = {
           cx: e.clientX + (Math.random() * 20 - 10),
           cy: e.clientY + (Math.random() * 20 - 10),
           r: Math.random() * 2 + 1,
           opacity: 1,
         };
 
-        // Limit dynamic points to avoid excessive rendering
         return [...prevPoints.slice(-30), newPoint];
       });
     };
@@ -60,7 +76,6 @@ export default function GridBackground() {
   }, []);
 
   useEffect(() => {
-    // Fade out dynamic points over time
     const interval = setInterval(() => {
       setDynamicPoints((prevPoints) =>
         prevPoints
@@ -74,10 +89,8 @@ export default function GridBackground() {
 
   return (
     <>
-      {/* Static Background */}
       <div className="fixed inset-0 ai-background -z-10" />
 
-      {/* Fluid Neural Network-like Effect */}
       <div
         className="absolute inset-0 flex justify-center items-center -z-10 pointer-events-none"
         style={{
@@ -91,7 +104,6 @@ export default function GridBackground() {
           className="absolute inset-0"
           style={{ mixBlendMode: 'overlay' }}
         >
-          {/* Static Neural Network-like Connections */}
           <g fill="none" className="ai-line">
             {staticLines.current.map((line, index) => (
               <line
@@ -106,7 +118,6 @@ export default function GridBackground() {
             ))}
           </g>
 
-          {/* Static Medium-Sized Glowing Dots */}
           <g>
             {dots.map((dot, index) => (
               <circle
@@ -119,7 +130,6 @@ export default function GridBackground() {
             ))}
           </g>
 
-          {/* Static Tiny Dots */}
           <g>
             {tinyDots.map((dot, index) => (
               <circle
@@ -133,7 +143,6 @@ export default function GridBackground() {
             ))}
           </g>
 
-          {/* Dynamic Points Popping Up Near Mouse Pointer */}
           <g>
             {dynamicPoints.map((point, index) => (
               <circle
@@ -149,7 +158,6 @@ export default function GridBackground() {
         </svg>
       </div>
 
-      {/* Focus/Processing Mask */}
       <div
         className="absolute inset-0"
         style={{
